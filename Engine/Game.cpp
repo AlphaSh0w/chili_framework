@@ -21,7 +21,7 @@
 #include "MainWindow.h"
 #include "Game.h"
 #include "Board.h"
-
+#include "Vec2.h"
 Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
@@ -39,9 +39,22 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	Board b(10,10);
+	int width = 10;
+	int height = 20;
+	Board b(width,height);
+
+	for (int x = 0; x < width; ++x)
+	{
+		for (int y = 0; y < height; ++y)
+		{
+			b.SetBlock(x,y,Colors::Red);
+		}
+	}
+	b.Draw({200,50},gfx);
+
 }
 
 void Game::ComposeFrame()
 {
+
 }
