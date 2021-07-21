@@ -15,19 +15,19 @@ public:
 	void SetY(T _y){y = _y}
 
 public:
-	bool operator==(const Vec2& rhs)
+	bool operator==(const Vec2& rhs) const
 	{
 		return(x == rhs.x && y == rhs.y);
 	}
-	bool operator!=(const Vec2& rhs)
+	bool operator!=(const Vec2& rhs) const
 	{
 		return !(*this == rhs);
 	}
-	Vec2 operator+(const Vec2& rhs)
+	Vec2 operator+(const Vec2& rhs) const
 	{
 		return {x + rhs.x, y + rhs.y};
 	}
-	Vec2 operator-(const Vec2& rhs)
+	Vec2 operator-(const Vec2& rhs) const
 	{
 		return {x - rhs.x, y - rhs.y};
 	}
