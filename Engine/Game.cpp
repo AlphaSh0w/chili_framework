@@ -20,6 +20,7 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
+#include "Board.h"
 
 Game::Game( MainWindow& wnd )
 	:
@@ -38,6 +39,7 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	Board b(10,10);
 }
 
 void Game::ComposeFrame()
