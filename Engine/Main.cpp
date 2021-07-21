@@ -22,6 +22,7 @@
 #include "Game.h"
 #include "ChiliException.h"
 
+#pragma warning(suppress : 28251)
 int WINAPI wWinMain( HINSTANCE hInst,HINSTANCE,LPWSTR pArgs,INT )
 {
 	try
