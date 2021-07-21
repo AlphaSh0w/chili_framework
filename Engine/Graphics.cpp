@@ -316,6 +316,22 @@ void Graphics::PutPixel( int x,int y,Color c )
 	pSysBuffer[Graphics::ScreenWidth * y + x] = c;
 }
 
+void Graphics::PutRect(int top, int left, int bottom, int right, Color c)
+{
+	for (int x = left; x <= right; ++x)
+	{
+		for (int y = top; y <= bottom; ++y)
+		{
+			PutPixel(x,y,c);
+		}
+	}
+}
+
+void Graphics::PutRect(Vec2<int> topLeft, Vec2<int> bottomRight, Color c)
+{
+	PutRect(topLeft.GetY(), topLeft.GetX(), bottomRight.GetY(), bottomRight.GetX(), c);
+}
+
 
 //////////////////////////////////////////////////
 //           Graphics Exception
