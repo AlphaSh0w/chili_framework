@@ -316,20 +316,20 @@ void Graphics::PutPixel( int x,int y,Color c )
 	pSysBuffer[Graphics::ScreenWidth * y + x] = c;
 }
 
-void Graphics::PutRect(int top, int left, int bottom, int right, Color c)
+void Graphics::PutRect(int top, int left, int bottom, int right, Color c, int padding)
 {
-	for (int x = left; x <= right; ++x)
+	for (int x = left + padding; x <= right - padding; ++x)
 	{
-		for (int y = top; y <= bottom; ++y)
+		for (int y = top + padding; y <= bottom - padding; ++y)
 		{
 			PutPixel(x,y,c);
 		}
 	}
 }
 
-void Graphics::PutRect(Vec2<int> topLeft, Vec2<int> bottomRight, Color c)
+void Graphics::PutRect(Vec2<int> topLeft, Vec2<int> bottomRight, Color c, int padding)
 {
-	PutRect(topLeft.GetY(), topLeft.GetX(), bottomRight.GetY(), bottomRight.GetX(), c);
+	PutRect(topLeft.GetY(), topLeft.GetX(), bottomRight.GetY(), bottomRight.GetX(), c, padding);
 }
 
 

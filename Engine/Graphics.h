@@ -58,8 +58,8 @@ public:
 		PutPixel( x,y,{ unsigned char( r ),unsigned char( g ),unsigned char( b ) } );
 	}
 	void PutPixel( int x,int y,Color c );
-	void PutRect(int top, int left, int bottom, int right, Color c);
-	void PutRect(Vec2<int> topLeft, Vec2<int> bottomRight, Color c);
+	void PutRect(int top, int left, int bottom, int right, Color c, int padding = 0);
+	void PutRect(Vec2<int> topLeft, Vec2<int> bottomRight, Color c, int padding = 0);
 	~Graphics();
 private:
 	Microsoft::WRL::ComPtr<IDXGISwapChain>				pSwapChain;
